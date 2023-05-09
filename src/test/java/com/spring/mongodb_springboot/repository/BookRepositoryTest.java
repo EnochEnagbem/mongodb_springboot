@@ -18,7 +18,7 @@ class BookRepositoryTest {
     @Test
     void addBook(){
 
-        Book book = new Book("Pride and Prejudice","Jane Austen");
+        Book book = new Book("To Kill a Mockingbird", "Harper Lee");
 
         bookRepository.save(book);
 
