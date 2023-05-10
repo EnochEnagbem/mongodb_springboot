@@ -25,7 +25,7 @@ jobs:
 
 
     - name: Set Firebase project
-      run: firebase use --add mongodb-spring-boot
+      run: --project mongodb-spring-boot
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
