@@ -18,6 +18,6 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Test with Maven
+    - name: Junit Test with Maven
       run: mvn -B test --file pom.xml
 
