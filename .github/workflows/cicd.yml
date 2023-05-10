@@ -23,8 +23,9 @@ jobs:
 
     - name: Deploy to Firebase
       uses: joinflux/firebase-tools@master
-      with:
-          args: use mongodb-spring-boot && deploy --only hosting
       env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      run: |
+          firebase use mongodb-spring-boot
+          firebase deploy --only hosting
 
