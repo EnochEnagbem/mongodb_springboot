@@ -24,14 +24,14 @@ jobs:
       run: mvn -B test --file pom.xml
 
     - name: Use Firebase project
-      run: firebase use mongodb-spring-boot
+      run: firebase use --add mongodb-spring-boot
       env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
     - name: Deploy to Firebase
       uses: joinflux/firebase-tools@master
       with:
-          args: deploy --only hosting
+          args: firebase use mongodb-spring-boot && deploy --only hosting
       env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
