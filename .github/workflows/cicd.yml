@@ -16,9 +16,6 @@ jobs:
         java-version: '17'
 
 
-    - name: Get IP Address
-      run: curl ifconfig.me
-
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Test with Maven
