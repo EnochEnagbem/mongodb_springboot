@@ -22,6 +22,7 @@ public class BookController {
         return ResponseEntity.ok(createdBook);
     }
 
+
     @GetMapping
     public ResponseEntity<List<Book>> getAllBooks() {
         List<Book> books = bookService.getAllBooks();
