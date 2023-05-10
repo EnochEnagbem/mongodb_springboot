@@ -21,9 +21,9 @@ jobs:
     - name: Test with Maven
       run: mvn -B test --file pom.xml
 
-    - name: Authenticate Firebase CLI
-      uses: joinflux/firebase-tools@v9.16.0
-      with:
-          args: deploy --only hosting
-      env:
-          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+#    - name: Authenticate Firebase CLI
+#      uses: joinflux/firebase-tools@v9.16.0
+#      with:
+#          args: deploy --only hosting
+#      env:
+#          FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
