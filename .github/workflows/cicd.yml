@@ -16,10 +16,10 @@ jobs:
         java-version: '17'
 
 
+    - name: Get IP Address
+      run: echo ${{ github.runner.ip_address }}
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Test with Maven
       run: mvn -B test --file pom.xml
-
-    - name: Get IP Address
-      run: echo ${{ github.runner.ip_address }}
