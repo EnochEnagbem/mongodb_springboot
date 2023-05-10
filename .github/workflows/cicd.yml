@@ -21,11 +21,15 @@ jobs:
     - name: Junit Test with Maven
       run: mvn -B test --file pom.xml
 
-    - name: Deploy to Firebase
-      uses: joinflux/firebase-tools@master
+    - name: Use Firebase project
+      run: firebase use mongodb-spring-boot
       env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-      run: |
-          firebase use mongodb-spring-boot
-          firebase deploy --only hosting
+
+    - name: Deploy to Firebase
+      uses: joinflux/firebase-tools@master
+      with:
+          args: deploy --only hosting
+      env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
