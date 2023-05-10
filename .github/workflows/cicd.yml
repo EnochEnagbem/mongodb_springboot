@@ -16,7 +16,7 @@ jobs:
         java-version: '17'
 
 
-    - name: Build with Maven
+    - name: Build
       run: mvn -B package --file pom.xml
     - name: Junit Test with Maven
       run: mvn -B test --file pom.xml
