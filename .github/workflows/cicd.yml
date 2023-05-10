@@ -25,9 +25,9 @@ jobs:
 
 
     - name: Set Firebase project
-      run: --project mongodb-spring-boot
+      run: firebase use --add mongodb-spring-boot
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
     - name: Deploy to Firebase
       uses: joinflux/firebase-tools@master
